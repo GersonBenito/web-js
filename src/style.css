@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    padding: 16px;
+    border-bottom: 1px solid #dad4d4;
+    box-shadow: 0px 0px 16px 5px #dad4d4;
+}
+
+.menu{
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+}
+
+.option a{
+    text-decoration: none;
+    font-size: 20px;
+    font-family: sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.1px;
+    line-height: 20px;
+    color: black;
+}
+
+main{
+    background: #DA4453;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #89216B, #DA4453);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #89216B, #DA4453); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    height: 92vh;
+}
+
+.container-footer{
+    height: 50vh;
+    background: white;
+    bottom: 0;
+    position: absolute;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 25px;
+}
+
+.button-float{
+    border: none;
+    padding: 12px 24px;
+    border-radius: 33px;
+    color: black;
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.1px;
+    line-height: 20px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 16px;
+    margin-right: 16px;
+    cursor: pointer;
+}
+
+.title{
+    font-size: 20px;
+    font-weight: 700;
+    font-family: sans-serif;
+    line-height: 20px;
+    letter-spacing: 0.1px;
+}
+
+.content{
+    font-size: 12px;
+    font-weight: 500;
+    font-family: sans-serif;
+    line-height: 20px;
+    letter-spacing: 0.1px;
+}
+
+.container-social-media{
+    position: absolute;
+    display: flex;
+    bottom: 0;
+    margin-left: 16px;
+    margin-bottom: 16px;
+    align-items: center;
+    gap: 16px;
+}
+
+.container-social-media img{
+    cursor: pointer;
+}
+
+.container{
+    display: none;
+}
+
+.active{
+    display: block;
+}
+
+.btn-active{
+    background: #ec407a;
+    color: #fff;
+}
