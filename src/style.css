@@ -190,3 +190,12 @@ main{
     background: rgb(66, 64, 65);
     cursor: no-drop;
 }
+
+.error-message{
+    color: red;
+    font-family: sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.1px;
+    margin-left: 8px;
+    margin-top: 4px;
+}
