@@ -50,14 +50,14 @@ document.addEventListener('DOMContentLoaded', function(){
             console.log(target);
             const texbox = target.id === 'lastName' ? 'last name' : target.id === 'userName' ? 'user name' : target.id;
             // using traversing javaScript
-            showAlert(`El campo ${texbox} es obligatorio`, target.parentElement, target.classList);
+            showAlert(`The ${texbox} field is required`, target.parentElement, target.classList);
             userInfo[target.name] = '';
             checkUserInfo();
             return;
         }
 
         if(target.id === 'email' && !validateEmail(target.value)){
-            showAlert('El email no es valido', target.parentElement, target.classList);
+            showAlert('The email is invalid', target.parentElement, target.classList);
             userInfo[target.name] = '';
             checkUserInfo();
             return;
