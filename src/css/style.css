@@ -218,3 +218,33 @@ main{
 .hiddent-spinner{
     display: none;
 }
+
+.message{
+    width: 250px;
+    background: #1DB954;
+    color: white;
+    border-radius: 3px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 8px;
+    padding: 16px;
+    display: none;
+}
+
+.message .title{
+    font-size: 20px;
+    font-weight: 700;
+    font-family: sans-serif;
+    line-height: 20px;
+    letter-spacing: 0.1px;
+    margin-bottom: 8px;
+}
+
+.message .subtitle{
+    font-size: 16px;
+    font-weight: 400;
+    font-family: sans-serif;
+    line-height: 20px;
+    letter-spacing: 0.1px;
+}

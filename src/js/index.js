@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function(){
     const btnSend = document.querySelector('.send');
     const btnReset = document.querySelector('.reset');
     const spinner = document.querySelector('#spinner');
+    const message = document.querySelector('.message');
     
     const toggleAction = () =>{
     
@@ -64,6 +65,9 @@ document.addEventListener('DOMContentLoaded', function(){
             spinner.classList.remove('show-spinner');
             spinner.classList.add('hiddent-spinner');
             resetForm();
+            // show message alert success
+            message.style.display = 'block';
+            messageAlert('Success', 'Data send success', 3000);
         },3000)
     }
 
@@ -147,6 +151,18 @@ document.addEventListener('DOMContentLoaded', function(){
         userInfo.userName = '';
         form.reset();
         checkUserInfo();
+    }
+
+    function messageAlert(titleAlert, subtitleAlert, durationAlert){
+        const title = document.querySelector('.message .title');
+        const subtitle = document.querySelector('.message .subtitle');
+        
+        title.textContent = titleAlert;
+        subtitle.textContent = subtitleAlert;
+
+        setTimeout(()=>{
+            message.style.display = 'none';
+        },durationAlert)
     }
 
 });
