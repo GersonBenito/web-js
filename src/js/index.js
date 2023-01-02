@@ -19,6 +19,8 @@ document.addEventListener('DOMContentLoaded', function(){
     const inputUserName = document.querySelector('#userName');
     const form = document.querySelector('#formulario');
     const btnSend = document.querySelector('.send');
+    const btnReset = document.querySelector('.reset');
+    const spinner = document.querySelector('#spinner');
     
     const toggleAction = () =>{
     
@@ -43,6 +45,27 @@ document.addEventListener('DOMContentLoaded', function(){
     inputAge.addEventListener('input', validator);
     inputEmail.addEventListener('input', validator);
     inputUserName.addEventListener('input', validator);
+
+    // reset form
+    btnReset.addEventListener('click', (event) =>{
+        event.preventDefault();
+        resetForm();
+    })
+
+    // send user info
+    form.addEventListener('submit', sendUserInfo);
+
+    function sendUserInfo(event){
+        event.preventDefault();
+        spinner.classList.remove('hiddent-spinner');
+        spinner.classList.add('show-spinner');
+        btnSend.disabled = true;
+        setTimeout(() => {
+            spinner.classList.remove('show-spinner');
+            spinner.classList.add('hiddent-spinner');
+            resetForm();
+        },3000)
+    }
 
     // funcion validar
     function validator({ target }){
@@ -114,6 +137,16 @@ document.addEventListener('DOMContentLoaded', function(){
         }
 
         btnSend.disabled = false;
+    }
+
+    function resetForm(){
+        userInfo.name = '';
+        userInfo.lastName = '';
+        userInfo.age = '';
+        userInfo.email = '';
+        userInfo.userName = '';
+        form.reset();
+        checkUserInfo();
     }
 
 });

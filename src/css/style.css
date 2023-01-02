@@ -207,3 +207,14 @@ main{
     margin-left: 8px;
     margin-top: 4px;
 }
+
+.show-spinner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 8px;
+}
+
+.hiddent-spinner{
+    display: none;
+}
