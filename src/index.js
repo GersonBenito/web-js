@@ -47,22 +47,23 @@ document.addEventListener('DOMContentLoaded', function(){
     // funcion validar
     function validator({ target }){
         if(target.value.trim() === ''){
+            console.log(target);
             const texbox = target.id === 'lastName' ? 'last name' : target.id === 'userName' ? 'user name' : target.id;
             // using traversing javaScript
-            showAlert(`El campo ${texbox} es obligatorio`, target.parentElement);
+            showAlert(`El campo ${texbox} es obligatorio`, target.parentElement, target.classList);
             userInfo[target.name] = '';
             checkUserInfo();
             return;
         }
 
         if(target.id === 'email' && !validateEmail(target.value)){
-            showAlert('El email no es valido', target.parentElement);
+            showAlert('El email no es valido', target.parentElement, target.classList);
             userInfo[target.name] = '';
             checkUserInfo();
             return;
         }
 
-        clearAlert(target.parentElement);
+        clearAlert(target.parentElement, target.classList);
 
         // assign values
         userInfo[target.name] = target.value.trim();
@@ -71,9 +72,9 @@ document.addEventListener('DOMContentLoaded', function(){
         checkUserInfo();
     }
 
-    function showAlert(message, reference){
+    function showAlert(message, reference, classList){
         // clear error message
-        clearAlert(reference);
+        clearAlert(reference,classList);
 
         // generate alert HTML
         const error = document.createElement('P');
@@ -82,14 +83,21 @@ document.addEventListener('DOMContentLoaded', function(){
         error.classList.add('error-message');
         // inject HTML in the form
         reference.appendChild(error);
+        // change bordes of the input
+        classList.remove('form-input-valid');
+        classList.add('form-input-invalid');
+
     }
 
-    function clearAlert(reference){
+    function clearAlert(reference, classList){
         // validate if exist a message error in the DOM
         const errorMessage = reference.querySelector('.error-message');
         if(errorMessage){
             // remove element
             errorMessage.remove();
+            // change bordes of the input
+            classList.remove('form-input-invalid');
+            classList.add('form-input-valid');
         }
     }
 
